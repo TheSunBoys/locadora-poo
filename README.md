@@ -1,4 +1,8 @@
-# prova-poo
-repositório da primeira avaliação da disciplina de POO
+# Projeto Locadora de Carros
 
-membros: **Gabriel Batistuta, Thiago Frank, José**
+Projeto da disciplina **Laboratório de Programação Orientada a Objetos**
+
+## Equipe
+- Gabriel Batistuta Urbano Lopes (Turma C)
+- Thiago Frank Almeida da Silva (Turma C)
+- Jose Ivanilson Marinho da Silva (Turma C)
