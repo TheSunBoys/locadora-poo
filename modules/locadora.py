@@ -17,6 +17,8 @@ class App():
     def cadastrar_veiculo(self):
         pass
 
+    def cadastrar_usuario(self):
+        pass
     class Veiculo():
         def __init__(self, marca, modelo, ano):
             self.marca = marca
@@ -30,7 +32,7 @@ class App():
             self.valorDaDiaria = valorDaDiaria
             
     class Cliente():
-        def __init__(self, nome, id, historicoDeCarrosAlugados):
+        def __init__(self, nome, id, historicoDeCarrosAlugados=None):
             self.nome = nome
             self.id = id
             self.historicoDeCarrosAlugados = historicoDeCarrosAlugados
