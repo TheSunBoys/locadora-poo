@@ -2,8 +2,10 @@ class App():
     def __init__(self):
         pass
 
-    def consultar_disponibilidade_de_veiculos(self):
-        pass
+    def consultar_disponibilidade_de_veiculos(self, veiculoList):
+        vList = veiculoList
+        for i, veicle in enumerate(vList):
+            print(f'{i}:\n\n{veicle}\n\n')
 
     def listar_veiculos_por_marca(self):
         pass
@@ -15,7 +17,14 @@ class App():
         pass
 
     def cadastrar_veiculo(self):
-        pass
+        marca = input('Digite a MARCA do veiculo: ')
+        modelo = input('Digite o MODELO do veiculo: ')
+        ano = input('Digite o ANO do veiculo: ')
+        placa = input('Digite a PLACA do carro: ')
+        quilometragem = input('Digite a QUILOMETRAGEM do veiculo: ')
+        valorDaDiaria = input('Digite o VALOR DA DIARIA do Carro: ')
+        car = self.Carro(marca, modelo, ano, placa, quilometragem, valorDaDiaria)
+        return car
 
     def cadastrar_usuario(self):
         pass
@@ -26,11 +35,12 @@ class App():
             self.ano = ano
     
     class Carro(Veiculo):
-        def __init__(self, placa, quilometragem, valorDaDiaria):
+        def __init__(self, marca, modelo, ano, placa, quilometragem, valorDaDiaria):
+            super().__init__(marca, modelo, ano)
             self.placa = placa
             self.quilometragem = quilometragem
             self.valorDaDiaria = valorDaDiaria
-            
+
     class Cliente():
         def __init__(self, nome, id, historicoDeCarrosAlugados=None):
             self.nome = nome
