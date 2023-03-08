@@ -1,20 +1,25 @@
 import os
 import platform
-
+import json
 from modules import locadora
 
 if __name__ == '__main__':
     app = locadora.App()
-    userList = []
-    veiculoList = []
+    with open('./json/users.json') as userFile:
+        userList = json.load(userFile)
+    
+    with open('./json/cars.json') as carFile:
+        veiculoList = json.load(carFile)
+    
+    def pauseAndClear():
+        input('\n\nPressione [ENTER] para continuar...')
+        so = platform.system()
+        if so == 'Linux':
+            os.system('clear')
+        else:
+            os.system('cls')
+
     while(True):
-        def pauseAndClear():
-            input('\n\nPressione [ENTER] para continuar...')
-            so = platform.system()
-            if so == 'Linux':
-                os.system('clear')
-            else:
-                os.system('cls')
 
         print('Tabela da Locadora')
         print('0 - Cadastrar veiculo')
@@ -27,10 +32,11 @@ if __name__ == '__main__':
 
         match (resp):
             case 0:
-                app.cadastrar_veiculo()
+                car = app.cadastrar_veiculo()
+                print(dir(veiculoList)) # no append function?
                 pauseAndClear()
             case 1:
-                app.consultar_disponibilidade_de_veiculos()
+                app.consultar_disponibilidade_de_veiculos(veiculoList)
                 pauseAndClear()
             case 2:
                 app.listar_veiculos_por_marca()
