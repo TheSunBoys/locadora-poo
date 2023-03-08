@@ -1,0 +1,24 @@
+{
+    "veiculoList" : [
+        {
+            "Carro": {
+                "marca" : "Monza",
+                "modelo" : "Calhambeque", 
+                "ano" : "2007",
+                "placa" : "DEVIL", 
+                "quilometragem" : 0, 
+                "valorDaDiaria" : 666
+            }
+        },
+        {
+            "Carro": {
+                "marca" : "Flamengo",
+                "modelo" : "Fusca", 
+                "ano" : "1986",
+                "placa" : "_ACDC_", 
+                "quilometragem" : 666, 
+                "valorDaDiaria" : 69
+            }
+        }
+    ]
+}
