@@ -2,12 +2,14 @@ class App():
     def __init__(self):
         pass
 
-    def consultar_disponibilidade_de_veiculos(self, veiculoList):
-        vList = veiculoList
+    def consultar_disponibilidade_de_veiculos(self, carList):
+        vList = carList
+        print(dir(vList))
         for i, veicle in enumerate(vList):
-            print(f'{i}:\n\n{veicle}\n\n')
+            print(veicle)
+            print(f'Carro {i} [\n{veicle.marca},{veicle.modelo},{veicle.ano}\n{veicle.placa}{veicle.quilometragem}Km, {veicle.valorDaDiaria} R$ por dia]\n\n')
 
-    def listar_veiculos_por_marca(self):
+    def listar_veiculos_por_marca(self, carList):
         pass
 
     def listar_veiculos_por_modelo(self):
