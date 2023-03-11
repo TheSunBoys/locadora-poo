@@ -30,10 +30,10 @@ if __name__ == '__main__':
                     app.listar_veiculos_por_marca(carList)
                     util.pauseAndClear()
                 case 3:
-                    app.listar_veiculos_por_modelo()
+                    app.listar_veiculos_por_modelo(carList)
                     util.pauseAndClear()
                 case 4:
-                    app.listar_veiculos_por_ano()
+                    app.listar_veiculos_por_ano(carList)
                     util.pauseAndClear()
                 case 5:
                     client = app.cadastrar_usuario()

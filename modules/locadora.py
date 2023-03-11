@@ -11,6 +11,7 @@ class App():
 
     def listar_veiculos_por_marca(self, carList): #Thiago
         self.carList = carList
+        print(carList.carro[0])
 
     def listar_veiculos_por_modelo(self): #thiago
         pass
