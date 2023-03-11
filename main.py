@@ -1,21 +1,12 @@
-import os
-import platform
-
-from modules import locadora
+from modules import locadora, obj
+from utils import util
 
 if __name__ == '__main__':
     app = locadora.App()
-    userList = []
-    veiculoList = []
-    while(True):
-        def pauseAndClear():
-            input('\n\nPressione [ENTER] para continuar...')
-            so = platform.system()
-            if so == 'Linux':
-                os.system('clear')
-            else:
-                os.system('cls')
+    
+    userList, carList = obj.loadLists()
 
+    while(True):
         print('Tabela da Locadora')
         print('0 - Cadastrar veiculo')
         print('1 - Consultar disponibilidade de veículos')
@@ -23,26 +14,35 @@ if __name__ == '__main__':
         print('3 - Listar veículos por modelo')
         print('4 - Listar veículos por ano')
         print('5 - Criar usuario')
-        resp = int(input('Digite sua escolha: '))
 
-        match (resp):
-            case 0:
-                app.cadastrar_veiculo()
-                pauseAndClear()
-            case 1:
-                app.consultar_disponibilidade_de_veiculos()
-                pauseAndClear()
-            case 2:
-                app.listar_veiculos_por_marca()
-                pauseAndClear()
-            case 3:
-                app.listar_veiculos_por_modelo()
-                pauseAndClear()
-            case 4:
-                app.listar_veiculos_por_ano()
-                pauseAndClear()
-            case 5:
-                client = app.cadastrar_usuario()
-                pauseAndClear()
-            case _:
-                print('quebrou!')
+        try:
+            resp = int(input('Digite sua escolha: '))
+
+            match (resp):
+                case 0:
+                    car = app.cadastrar_veiculo()
+                    print(dir(carList)) # no append function?
+                    util.pauseAndClear()
+                case 1:
+                    app.consultar_disponibilidade_de_veiculos(carList)
+                    util.pauseAndClear()
+                case 2:
+                    app.listar_veiculos_por_marca(carList)
+                    util.pauseAndClear()
+                case 3:
+                    app.listar_veiculos_por_modelo()
+                    util.pauseAndClear()
+                case 4:
+                    app.listar_veiculos_por_ano()
+                    util.pauseAndClear()
+                case 5:
+                    client = app.cadastrar_usuario()
+                    util.pauseAndClear()
+                case _:
+                    util.brokenProgram()
+                    util.error()
+                    break
+        except:
+            util.brokenProgram()
+            util.error()
+            break
