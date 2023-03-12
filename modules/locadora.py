@@ -5,6 +5,17 @@ class App():
     def __init__(self):
         pass
 
+    def cadastrar_veiculo(self):
+        marca = input('Digite a MARCA do veiculo: ')
+        modelo = input('Digite o MODELO do veiculo: ')
+        ano = input('Digite o ANO do veiculo: ')
+        placa = input('Digite a PLACA do carro: ')
+        quilometragem = int(input('Digite a QUILOMETRAGEM do veiculo: '))
+        valorDaDiaria = int(input('Digite o VALOR DA DIARIA do Carro: '))
+        car = self.Carro(marca, modelo, ano, placa, quilometragem, valorDaDiaria)
+        print(f'{car} cadastrado!')
+        return car
+
     def consultar_disponibilidade_de_veiculos(self, carList):
         carDisponiveis = []
         carIndisponiveis = []
@@ -36,32 +47,25 @@ class App():
 
         mostrarVeiculos(resp)
 
-    def alugar_carro(self):
-        self.consultar_disponibilidade_de_veiculos(self)
-
     def listar_veiculos_por_marca(self, carList): #Thiago
         self.carList = carList
         print(carList.carro[0])
 
-    def listar_veiculos_por_modelo(self): #thiago
+    def listar_veiculos_por_modelo(self, carList): #thiago
         pass
 
-    def listar_veiculos_por_ano(self):
+    def listar_veiculos_por_ano(self, carList):
         pass
-
-    def cadastrar_veiculo(self):
-        marca = input('Digite a MARCA do veiculo: ')
-        modelo = input('Digite o MODELO do veiculo: ')
-        ano = input('Digite o ANO do veiculo: ')
-        placa = input('Digite a PLACA do carro: ')
-        quilometragem = int(input('Digite a QUILOMETRAGEM do veiculo: '))
-        valorDaDiaria = int(input('Digite o VALOR DA DIARIA do Carro: '))
-        car = self.Carro(marca, modelo, ano, placa, quilometragem, valorDaDiaria)
-        print(f'{car} cadastrado!')
-        return car
 
     def cadastrar_usuario(self):
         pass
+    
+    def alugar_veiculo(self):
+        self.consultar_disponibilidade_de_veiculos(self)
+    
+    def devolver_veiculo(self):
+        pass
+
     class Veiculo():
         def __init__(self, marca, modelo, ano):
             self.marca = marca
