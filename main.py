@@ -41,10 +41,7 @@ if __name__ == '__main__':
                     client = app.cadastrar_usuario()
                     util.pauseAndClear()
                 case 6:
-                    app.alugar_veiculo()
-                    util.pauseAndClear()
-                case 7:
-                    app.devolver_veiculo()
+                    app.alugar_veiculo(carList, userList)
                     util.pauseAndClear()
                 case _:
                     util.brokenProgram()
