@@ -1,5 +1,6 @@
 from utils import util
 from random import randint
+from datetime import date, datetime
 
 class App():
     def __init__(self):
@@ -20,7 +21,6 @@ class App():
         carDisponiveis = []
         carIndisponiveis = []
         for veicle in carList:
-            # veicle = veicle['Carro']
             if veicle.estado == 'DISPONIVEL':
                 carDisponiveis.append(veicle)
             else:
@@ -60,9 +60,23 @@ class App():
     def cadastrar_usuario(self):
         pass
     
-    def alugar_veiculo(self):
-        self.consultar_disponibilidade_de_veiculos(self)
-    
+
+    def alugar_veiculo(self, carList, userList):
+        for i, car in enumerate(carList):
+            print(f'carro {i}: {car}')
+        resp = int(input('Digite o número do carro que deseja alugar: '))
+        car = carList[resp]
+        print(f'carro: {car}')
+        for i, user in enumerate(userList):
+            print(f'usuario {i}: {user}')
+        resp = int(input('Digite o número do seu usuario: '))
+        user = userList[resp]
+        print(f'user: {user}')
+        dataFim = input('digite a data que deseja entregar o veiculo (%dd/%mm/%yyyy): ')
+        
+        aluguel = self.Aluguel(user, car, dataFim)
+        print(aluguel)
+
     def devolver_veiculo(self):
         pass
 
@@ -111,6 +125,24 @@ class App():
         def __str__(self):
             return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
 
+    class Aluguel:
+        def __init__(self, user, car, dataFim):
+            self.user = user
+            self.car = car
+            dataIni = date.today().strftime('%d/%m/%Y')
+            self.dataIni = datetime.strptime(dataIni, '%d/%m/%Y').date()
+            self.dataFim = datetime.strptime(dataFim, '%d/%m/%Y').date()
+            self.diaria = self.car.valorDaDiaria
+            self.qtDays = abs((self.dataFim - self.dataIni).days)
+            self.taxa = self.qtDays * (self.diaria * 0,20)
+            self.nomeClasse = self.__class__.__name__
+        
+        def __str__(self):
+            if self.qtDays <= 0:
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car.nomeClasse} {self.car}. com taxa de {self.taxa} R$ a ser paga'
+            else:
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car.nomeClasse} {self.car} '
+                
     def loadLists(self):
         c1 = self.Carro('Monza', 'Calhambeque', '2007', 'DEVIL', 0, 666)
         c2 = self.Carro('Shinerai', 'Fusca', '1986', '_ACDC_', 666, 69).set_estado()
