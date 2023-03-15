@@ -63,18 +63,20 @@ class App():
 
     def alugar_veiculo(self, carList, userList):
         for i, car in enumerate(carList):
-            print(f'carro {i}: {car}')
+            print(f'\ncarro {i}: {car}\n')
         resp = int(input('Digite o número do carro que deseja alugar: '))
         car = carList[resp]
-        print(f'carro: {car}')
+        print(f'\ncarro: {car}')
+        util.pauseAndClear()
         for i, user in enumerate(userList):
-            print(f'usuario {i}: {user}')
+            print(f'\nusuario {i}: {user}\n')
         resp = int(input('Digite o número do seu usuario: '))
         user = userList[resp]
-        print(f'user: {user}')
+        print(f'\nuser: {user}\n')
+        dataIni = input('digite a data que deseja pegar o veiculo (%dd/%mm/%yyyy): ')
         dataFim = input('digite a data que deseja entregar o veiculo (%dd/%mm/%yyyy): ')
         
-        aluguel = self.Aluguel(user, car, dataFim)
+        aluguel = self.Aluguel(user, car, dataIni, dataFim)
         print(aluguel)
 
     def devolver_veiculo(self):
@@ -126,19 +128,20 @@ class App():
             return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
 
     class Aluguel:
-        def __init__(self, user, car, dataFim):
+        def __init__(self, user, car, dataIni, dataFim):
             self.user = user
             self.car = car
-            dataIni = date.today().strftime('%d/%m/%Y')
             self.dataIni = datetime.strptime(dataIni, '%d/%m/%Y').date()
             self.dataFim = datetime.strptime(dataFim, '%d/%m/%Y').date()
+            hj = date.today().strftime('%d/%m/%Y')
+            self.hj = datetime.strptime(hj, '%d/%m/%Y').date()
             self.diaria = self.car.valorDaDiaria
-            self.qtDays = abs((self.dataFim - self.dataIni).days)
-            self.taxa = self.qtDays * (self.diaria * 0,20)
+            self.qtDays = abs((self.dataFim - self.hj).days)
+            self.taxa = self.qtDays * self.diaria * 0,20
             self.nomeClasse = self.__class__.__name__
         
         def __str__(self):
-            if self.qtDays <= 0:
+            if self.dataFim < self.hj:
                 return f'{self.nomeClasse} de {self.user.nome}:\n{self.car.nomeClasse} {self.car}. com taxa de {self.taxa} R$ a ser paga'
             else:
                 return f'{self.nomeClasse} de {self.user.nome}:\n{self.car.nomeClasse} {self.car} '
