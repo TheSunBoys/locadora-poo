@@ -1,0 +1,53 @@
+@startuml LocadoraDocs
+    class App {
+        +cadastrar_veiculo(self) Carro
+        +consultar_disponibilidade_de_veiculos(self, carList) void
+        +listar_veiculos_por_marca(self, carList) void
+        +listar_veiculos_por_modelo(self, carList) void
+        +listar_veiculos_por_ano(self, carList) void
+        +cadastrar_usuario(self) Usuario
+        +alugar_veiculo(self) tuple
+        +loadLists(self) tuple
+    }
+    class Veiculo {
+        - marca:string 
+        - modelo:string
+        - ano:string
+        - estado:string
+        - nomeClasse:string
+
+        +__str__(self) string 
+        +__repr__(self) string
+        +set_estado(self) Veiculo
+    }
+    class Carro{
+        - placa:string 
+        - quilometragem:integer
+        - valorDaDiaria:integer
+        - nomeClasse:string
+    }
+    class Cliente{
+        - nome:string
+        - id:integer
+        - historicoDeCarrosAlugados:Array
+        - nomeClasse:string
+
+        +__str__(self) string
+    }
+    class Aluguel{
+        - user:Cliente
+        - car:Carro
+        - dataIni:datetime
+        - dataFim:datetime
+        - hj:datetime
+        - diaria:integer
+        - qtDays:integer
+        - taxa:integer
+        - nomeClasse:string
+    }
+    Veiculo <|-- Carro
+    App o-- Veiculo
+    App o-- Carro
+    App o-- Cliente
+    App o-- Aluguel
+@enduml
