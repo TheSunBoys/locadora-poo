@@ -47,18 +47,33 @@ class App():
 
         mostrarVeiculos(resp)
 
-    def listar_veiculos_por_marca(self, carList): #Thiago
+    def listar_veiculos_por_marca(self, carList): #Thiagoo
         self.carList = carList
         print(carList.carro[0])
 
-    def listar_veiculos_por_modelo(self, carList): #thiago
+    def listar_veiculos_por_modelo(self, carList): #thiagoo
         pass
 
+    def ano_consulta(self, ano):
+        return [car for car in self.carList if car.ano == ano] 
+    
     def listar_veiculos_por_ano(self, carList):
-        pass
+    
+        ano = int(input("Ano: "))
+        carros_por_ano = self.carList(ano)
+        if carros_por_ano:
+            print(f'Veículos do ano {ano}:')
+        for car in carros_por_ano:
+            print(f'{i} - {car}')
+            i = i + 1
+        else:
+            print(f'Não há veículos do modelo {ano}. ')
 
-    def cadastrar_usuario(self):
-        pass
+    def cadastrar_usuario(self, nome, id):
+        nome= input("Digite seu nome: ")
+        id= input("Digite seu id: ")
+        cliente= self.Cliente(self, self)
+        cliente.cadastro_usuario(nome, id)
     
 
     def alugar_veiculo(self, carList, userList):
@@ -126,6 +141,13 @@ class App():
 
         def __str__(self):
             return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
+        
+        def cadastro_usuario(self, nome, id):
+            self.nome= nome 
+            self.id= id
+            self.historico= []
+            self.historico.append(nome, id)
+            
 
     class Aluguel:
         def __init__(self, user, car, dataIni, dataFim):
