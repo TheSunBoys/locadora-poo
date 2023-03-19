@@ -9,9 +9,8 @@ class App():
             print(veicle)
             print(f'Carro {i} [\n{veicle.marca},{veicle.modelo},{veicle.ano}\n{veicle.placa}{veicle.quilometragem}Km, {veicle.valorDaDiaria} R$ por dia]\n\n')
 
-    def listar_veiculos_por_marca(self, carList): #Thiago
-        self.carList = carList
-        print(carList.carro[0])
+    def listar_veiculos_por_marca(self): #Thiago
+        pass
 
     def listar_veiculos_por_modelo(self): #thiago
         pass
