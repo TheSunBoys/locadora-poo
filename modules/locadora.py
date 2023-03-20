@@ -62,25 +62,33 @@ class App():
     
 
     def alugar_veiculo(self, carList, userList):
-        for i, car in enumerate(carList):
+        carDisponiveis = []
+        for veicle in carList:
+            if veicle.estado == 'DISPONIVEL':
+                carDisponiveis.append(veicle)
+
+        for i, car in enumerate(carDisponiveis):
             print(f'\ncarro {i}: {car}\n')
+
         resp = int(input('Digite o número do carro que deseja alugar: '))
-        car = carList[resp]
+        car = carDisponiveis[resp]
         print(f'\ncarro: {car}')
         util.pauseAndClear()
+
         for i, user in enumerate(userList):
             print(f'\nusuario {i}: {user}\n')
+
         resp = int(input('Digite o número do seu usuario: '))
         user = userList[resp]
         print(f'\nuser: {user}\n')
+        
         dataIni = input('digite a data que deseja pegar o veiculo (%dd/%mm/%yyyy): ')
         dataFim = input('digite a data que deseja entregar o veiculo (%dd/%mm/%yyyy): ')
         
         aluguel = self.Aluguel(user, car, dataIni, dataFim)
+        util.pauseAndClear()
         print(aluguel)
-
-    def devolver_veiculo(self):
-        pass
+        return aluguel
 
     class Veiculo():
         def __init__(self, marca, modelo, ano):
@@ -118,14 +126,26 @@ class App():
             return f'\n{self.nomeClasse}: \n{self.marca}, {self.modelo},{self.ano}, placa: {self.placa}, {self.quilometragem}Km, {self.valorDaDiaria} R$ por dia\n'
 
     class Cliente():
-        def __init__(self, nome, historicoDeCarrosAlugados=None):
+        def __init__(self, nome):
             self.nome = nome
             self.id = randint(2, 5000) * randint(2, 5000)
-            self.historicoDeCarrosAlugados = historicoDeCarrosAlugados
+            self.historicoDeCarrosAlugados = []
             self.nomeClasse = self.__class__.__name__
 
         def __str__(self):
-            return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
+            if self.historicoDeCarrosAlugados == []:
+                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\nSem histórico'
+            else:
+                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
+
+        def __repr__(self):
+            if self.historicoDeCarrosAlugados == []:
+                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\nSem histórico'
+            else:
+                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
+
+        def atualizar_aluguel(self, aluguel):
+            self.historicoDeCarrosAlugados.append(aluguel)
 
     class Aluguel:
         def __init__(self, user, car, dataIni, dataFim):
@@ -136,22 +156,28 @@ class App():
             hj = date.today().strftime('%d/%m/%Y')
             self.hj = datetime.strptime(hj, '%d/%m/%Y').date()
             self.diaria = self.car.valorDaDiaria
-            self.qtDays = abs((self.dataFim - self.hj).days)
-            self.taxa = self.qtDays * self.diaria * 0,20
+            self.qtDays = abs((self.hj - self.dataFim).days)
+            self.daysRestantes = abs((self.dataFim - self.hj).days)
+            self.taxa = self.qtDays * (self.diaria * 20)/100
             self.nomeClasse = self.__class__.__name__
         
         def __str__(self):
             if self.dataFim < self.hj:
-                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car.nomeClasse} {self.car}. com taxa de {self.taxa} R$ a ser paga'
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$,\ncom taxa de {self.taxa} R$ por não entregar o carro por {self.qtDays}'
+
+            elif self.dataFim > self.hj:
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ndias restantes para a entrega: {self.daysRestantes}'
+
             else:
-                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car.nomeClasse} {self.car} '
+                hj = self.hj.strftime('%d/%m/%Y')
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ncom data de entrega para hoje {hj}'
                 
     def loadLists(self):
         c1 = self.Carro('Monza', 'Calhambeque', '2007', 'DEVIL', 0, 666)
         c2 = self.Carro('Shinerai', 'Fusca', '1986', '_ACDC_', 666, 69).set_estado()
 
-        u1 = self.Cliente('Joaquim Tafarel de Fênix', '400')
-        u2 = self.Cliente('Carlos Xavier de Pegáso', '47')
+        u1 = self.Cliente('Joaquim Tafarel de Fênix')
+        u2 = self.Cliente('Carlos Xavier de Pegáso')
 
         userList = [u1, u2]
         
