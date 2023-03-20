@@ -15,7 +15,6 @@ if __name__ == '__main__':
         print('4 - Listar veículos por ano')
         print('5 - Criar usuario')
         print('6 - alugar veiculo')
-        print('7 - devolver veiculo')
 
         try:
             resp = int(input('Digite sua escolha: '))
@@ -41,7 +40,16 @@ if __name__ == '__main__':
                     client = app.cadastrar_usuario()
                     util.pauseAndClear()
                 case 6:
-                    app.alugar_veiculo(carList, userList)
+                    aluguel = app.alugar_veiculo(carList, userList)
+                    
+                    for user in userList:
+                        if aluguel.user.id == user.id and user.nome == aluguel.user.nome:
+                            user.atualizar_aluguel(aluguel)
+                            
+                    for car in carList:
+                        if aluguel.car.placa == car.placa and aluguel.car.ano == car.ano:
+                            car.set_estado()
+
                     util.pauseAndClear()
                 case _:
                     util.brokenProgram()
