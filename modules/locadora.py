@@ -69,7 +69,7 @@ class App():
         else:
             print(f'Não há veículos do modelo {ano}. ')
 
-    def cadastrar_usuario(self, nome, id):
+    def cadastrar_usuario(self):
         nome= input("Digite seu nome: ")
         id= input("Digite seu id: ")
         cliente= self.Cliente(self, self)
