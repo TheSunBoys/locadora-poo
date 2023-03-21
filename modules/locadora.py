@@ -14,6 +14,7 @@ class App():
         quilometragem = int(input('Digite a QUILOMETRAGEM do veiculo: '))
         valorDaDiaria = int(input('Digite o VALOR DA DIARIA do Carro: '))
         car = self.Carro(marca, modelo, ano, placa, quilometragem, valorDaDiaria)
+        util.pauseAndClear()
         print(f'{car} cadastrado!')
         return car
 
@@ -27,7 +28,8 @@ class App():
                 carIndisponiveis.append(veicle)
 
         def menu():
-            resp = int(input('1 - listar carros disponiveis\n2 - listar carros indisponiveis\ndigite sua escolha: '))
+            resp = int(input('\n1 - listar carros disponiveis\n2 - listar carros indisponiveis\ndigite sua escolha: '))
+            util.pauseAndClear()
             return resp
 
         def mostrarVeiculos(resp):
@@ -52,30 +54,27 @@ class App():
         print(carList.carro[0])
 
     def listar_veiculos_por_modelo(self, carList): #thiagoo
-        pass
-
-    def ano_consulta(self, ano):
-        return [car for car in self.carList if car.ano == ano] 
+        pass 
     
     def listar_veiculos_por_ano(self, carList):
-    
-        ano= input("Ano: ")
+        ano = input("Ano: ")
         carros_por_ano = []
         for car in carList:
             if car.ano == ano:
-                carList.append(car)
-        print(f"Veículos do ano {ano}: ")
-        for i, car in enumerate(carros_por_ano):
-            print(f"{i} - {car}")
+                carros_por_ano.append(car)
+        if len(carros_por_ano) > 0:
+            print(f"Veículos do ano {ano}: ")
+            for i, car in enumerate(carros_por_ano):
+                print(f"{i} - {car}")
         else: 
             print(f"Não há veículos do ano {ano}. ")
 
     def cadastrar_usuario(self):
-        nome= input("Digite seu nome: ")
+        nome = input("Digite seu nome: ")
         client = self.Cliente(nome)
-        print("Cadastrado!")
+        print("cliente Cadastrado!")
+        util.pauseAndClear()
         return client
-        #cliente.cadastro_usuario(nome, id)
     
 
     def alugar_veiculo(self, carList, userList):
@@ -140,7 +139,7 @@ class App():
             return f'{self.nomeClasse}: {self.marca}, {self.modelo}, {self.ano}'
     
         def __repr__(self):
-            return f'\n{self.nomeClasse}: \n{self.marca}, {self.modelo},{self.ano}, placa: {self.placa}, {self.quilometragem}Km, {self.valorDaDiaria} R$ por dia\n'
+            return f'\n{self.nomeClasse}: \n{self.marca}, {self.modelo}, {self.ano}, placa: {self.placa}, {self.quilometragem}Km, {self.valorDaDiaria} R$ por dia\n'
 
     class Cliente():
         def __init__(self, nome):
@@ -150,20 +149,14 @@ class App():
             self.nomeClasse = self.__class__.__name__
 
         def __str__(self):
-            return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
-        
-        #def cadastro_usuario(self, nome, id):
-            #self.historico= []
-            #self.historico.append(nome, id)
-            
             if self.historicoDeCarrosAlugados == []:
-                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\nSem histórico'
+                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n[Sem histórico]'
             else:
                 return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
 
         def __repr__(self):
             if self.historicoDeCarrosAlugados == []:
-                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\nSem histórico'
+                return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n[Sem histórico]'
             else:
                 return f'{self.nomeClasse}: {self.nome}, id: {self.id}, historico de aluguel:\n{self.historicoDeCarrosAlugados}'
 
@@ -196,14 +189,18 @@ class App():
                 return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ncom data de entrega para hoje {hj}'
                 
     def loadLists(self):
-        c1 = self.Carro('Monza', 'Calhambeque', '2007', 'DEVIL', 0, 666)
-        c2 = self.Carro('Shinerai', 'Fusca', '1986', '_ACDC_', 666, 69).set_estado()
+        c1 = self.Carro('HONDA', 'Calhambeque', '2007', 'DEVIL', 0, 666)
+        c2 = self.Carro('SHINERAI', 'Fusca', '1986', '_ACDC_', 666, 69).set_estado()
+        c3 = self.Carro('FIAT', 'Uno', '2008', 'DANCE', 450, 80)
+        c4 = self.Carro('FORD', '4 Rodas', '2019', 'GODS', 666, 69)
 
         u1 = self.Cliente('Joaquim Tafarel de Fênix')
         u2 = self.Cliente('Carlos Xavier de Pegáso')
+        u3 = self.Cliente('James Fiesta de Libra')
+        u4 = self.Cliente('Shooter Booter de Câncer')
 
-        userList = [u1, u2]
+        userList = [u1, u2, u3, u4]
         
-        carList = [c1,c2]
+        carList = [c1, c2, c3, c4]
 
         return userList, carList
