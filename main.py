@@ -38,6 +38,7 @@ if __name__ == '__main__':
                     util.pauseAndClear()
                 case 5:
                     client = app.cadastrar_usuario()
+                    userList.append(client)
                     util.pauseAndClear()
                 case 6:
                     aluguel = app.alugar_veiculo(carList, userList)
