@@ -1,4 +1,4 @@
-@startuml LocadoraDocs
+@startuml diagrama_de_classes
     class App {
         +cadastrar_veiculo(self) Carro
         +consultar_disponibilidade_de_veiculos(self, carList) void
@@ -50,4 +50,7 @@
     App o-- Carro
     App o-- Cliente
     App o-- Aluguel
+    Aluguel "1" *-- Carro
+    Aluguel "1" *-- Cliente
+    Cliente o-- Aluguel
 @enduml
