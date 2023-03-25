@@ -1,0 +1,53 @@
+@startuml diagrama_de_atividade
+start
+:digite a ação a fazer;
+if ( error ) then
+  #pink:a locadora quebrou!;
+  #OrangeRed:(error);
+  kill
+endif
+repeat
+switch ( resp? )
+case ( resp == 0 )
+  #palegreen:Cadastrar veiculo;
+  :pede os parâmetros;
+  :cria o veiculo;
+  :armazena o carro;
+case ( resp == 1 )
+  #palegreen:Consultar disponibilidade de veículos;
+  :cria duas listas;
+  :(carros disponiveis e indeisponiveis);
+  :pergunta qual mostrar;
+  :mostra a lista;
+case ( resp == 2 )
+  #palegreen:Listar veículos por marca;
+  :pede a marca do carro;
+  :mostra a lista dos carros com a marca;
+case ( resp == 3 )
+  #palegreen:Listar veículos por modelo;
+  :pede o modelo do carro;
+  :mostra a lista dos carros com o modelo;
+case ( resp == 4 )
+  #palegreen:Listar veículos por ano;
+  :pede o ano do carro;
+  :mostra a lista dos carros com o ano;
+case ( resp == 5 )
+  #palegreen:Criar usuario;
+  :pede o nome do cliente;
+  :gera o id do cliente;
+  :cria o cliente;
+  :armazena o cliente;
+case ( resp == 6 )
+  #palegreen:alugar veiculo;
+  :pede o carro a ser alugado;
+  :pede o cliente que vai alugar;
+  :pede as datas de aluguel (inicial e final);
+  :gera a data de hoje pro calculo;
+  :cria o aluguel;
+  :adiciona ao historico do cliente;
+  :muda o estado do carro pra indisponivel;
+endswitch
+repeat while (need more actions?) is (yes)
+->no;
+stop
+@enduml

@@ -1,0 +1,63 @@
+@startuml diagrama_de_objetos
+
+object carro
+carro : marca = "FIAT"
+carro : modelo = "Uno"
+carro : ano = "2008"
+carro : placa = "DANCE"
+carro : quilometragem = 450
+carro : valorDaDiaria = 80
+
+carro : + set_estado(self) carro
+
+object carro2
+carro2 : marca = "FORD"
+carro2 : modelo = "4 Rodas"
+carro2 : ano = "2019"
+carro2 : placa = "GODS"
+carro2 : quilometragem = 666
+carro2 : valorDaDiaria = 69
+
+carro2 : + set_estado(self) carro2
+
+object cliente
+cliente : nome = "João Azul"
+cliente : id = 123456
+cliente : historicoDeCarrosAlugados = [aluguel, aluguel2]
+cliente : + atualizar_aluguel(aluguel)
+
+object cliente2
+cliente2 : nome = "Maria Vermelha"
+cliente2 : id = 234567
+cliente2 : historicoDeCarrosAlugados = []
+cliente2 : + atualizar_aluguel(aluguel)
+
+object aluguel
+aluguel : user = cliente
+aluguel : car = carro
+aluguel : dataIni = "15/03/2023"
+aluguel : dataFim = "20/03/2023"
+aluguel : hj = "24/03/2023"
+aluguel : diaria = carro.valorDaDiaria
+aluguel : qtDays = hj - dataFim
+aluguel : taxa = qtDays * diaria * (20/100)
+aluguel : nomeClasse = "Aluguel"
+
+object aluguel2
+aluguel2 : user = cliente
+aluguel2 : car = carro2
+aluguel2 : dataIni = "01/01/2023"
+aluguel2 : dataFim = "20/01/2023"
+aluguel2 : hj = "24/03/2023"
+aluguel2 : diaria = carro.valorDaDiaria
+aluguel2 : qtDays = hj - dataFim
+aluguel2 : taxa = qtDays * diaria * (20/100)
+aluguel2 : nomeClasse = "Aluguel"
+
+aluguel "1" *-- carro
+aluguel "1" *-- cliente
+aluguel2 "1" *-- carro2
+aluguel2 "1" *-- cliente
+cliente "1" o-- aluguel
+cliente "1" o-- aluguel2
+@enduml

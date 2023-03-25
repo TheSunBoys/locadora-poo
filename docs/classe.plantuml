@@ -1,4 +1,4 @@
-@startuml LocadoraDocs
+@startuml diagrama_de_classes
     class App {
         +cadastrar_veiculo(self) Carro
         +consultar_disponibilidade_de_veiculos(self, carList) void
@@ -16,8 +16,6 @@
         - estado:string
         - nomeClasse:string
 
-        +__str__(self) string 
-        +__repr__(self) string
         +set_estado(self) Veiculo
     }
     class Carro{
@@ -25,6 +23,8 @@
         - quilometragem:integer
         - valorDaDiaria:integer
         - nomeClasse:string
+
+        +set_estado(self) Veiculo
     }
     class Cliente{
         - nome:string
@@ -50,4 +50,7 @@
     App o-- Carro
     App o-- Cliente
     App o-- Aluguel
+    Aluguel "1" *-- Carro
+    Aluguel "1" *-- Cliente
+    Cliente o-- Aluguel
 @enduml
