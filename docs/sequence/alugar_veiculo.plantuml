@@ -1,0 +1,11 @@
+@startuml alugar_veiculo
+client --> app:alugar veiculo
+app --> client:solicitar carro, usuario, data inicial e data final
+client --> app:retorno de parâmetros
+
+app --> app:cadastro de aluguel
+app --> app:atualizar estado de carro pra "indisponivel"
+app --> app:atualizar historico de carros alugados do cliente
+app --> client:mostrar a quantidade de dias restantes até a entrega
+app --> client:se estiver fora do prazo mostrar o preço da taxa a ser paga
+@enduml
