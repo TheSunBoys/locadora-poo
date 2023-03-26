@@ -1,0 +1,7 @@
+@startuml listar_veiculos_por_modelo
+'listar veiculos por modelo
+client --> app:listar veiculos por modelo
+app --> client:solicitação de modelo
+client --> app:retornar modelo
+app --> client:retornar uma lista dos veiculos com o modelo
+@enduml
