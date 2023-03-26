@@ -1,0 +1,8 @@
+@startuml cadastro_de_veiculo
+'cadastro de veiculo 
+client --> app:cadastro de veiculo
+app --> client:solicitação de parâmetros
+client --> app:parâmetros dados
+app --> app:armazenamento no bd
+app --> client:"cadastro concluido"
+@enduml

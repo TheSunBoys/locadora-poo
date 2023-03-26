@@ -1,0 +1,20 @@
+@startuml diagrama_de_colaboração
+actor client
+skinparam linestyle ortho
+rectangle "app" as app
+rectangle "cadastrar usuario (1)" as criar_usuario
+rectangle "alugar veiculo (2)" as aluguel_veiculo
+
+client -right-> app: 1:escolher ação (1)
+app -down-> criar_usuario: 2:chamar função
+criar_usuario --> client: 3:solicitação de parâmetro (nome)
+client --> criar_usuario: 4:passagem de parâmetro
+criar_usuario --> app: 5:armazenar cliente
+client --> app: 6:escolher ação (2)
+app --> aluguel_veiculo: 7:chamar função
+aluguel_veiculo --> client: 8:pedir parâmetros(cliente, carro, data inicial e data final)
+client --> aluguel_veiculo: 9:passagem de parâmetros
+aluguel_veiculo --> app: 10:cadastro de aluguel do veiculo
+app --> app: 11:mudança de estado do veiculo
+aluguel_veiculo --> client: 12:mostrar dias restantes e possivel taxa
+@enduml

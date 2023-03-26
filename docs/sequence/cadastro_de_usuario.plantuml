@@ -1,0 +1,9 @@
+@startuml cadastro_de_usuario
+'cadastro de usuario
+client --> app:cadastro de usuario
+app --> client:solicitação de nome
+client --> app:retorno de nome
+app --> app:geração de id
+app --> app:armazenamento no bd
+app --> client:"cadastro concluido"
+@enduml

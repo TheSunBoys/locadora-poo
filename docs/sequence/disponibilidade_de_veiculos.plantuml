@@ -1,0 +1,7 @@
+@startuml consultar_disponibilidade_de_veiculos
+'consultar disponibilidade de veiculos
+client --> app:consultar disponibilidade de veiculos
+app --> client:solicitação de tipo de lista de veiculos (disponiveis ou indisponiveis)
+client --> app:retornar tipo de lista
+app --> client:mostrar a lista
+@enduml

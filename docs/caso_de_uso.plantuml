@@ -1,0 +1,52 @@
+@startuml diagrama_de_caso_de_uso
+left to right direction
+
+actor locadora
+actor client
+
+rectangle app{
+    
+    usecase "solicitar parâmetros" as solicitar_parametros 
+
+    usecase "mostrar carros disponiveis ou indisponiveis" as show_carros_disponiveis_ou_indisponiveis
+
+    usecase "mostrar lista de carros com o parâmetro dado" as showListCar
+
+    usecase "cadastrar usuario" as cadastrar_user #palegreen;line:black;line.bold;text:black
+
+    usecase "cadastrar veiculo" as cadastrar_veicle #palegreen;line:black;line.bold;text:black
+
+    usecase "alugar veiculo" as aluguel_veicle #palegreen;line:black;line.bold;text:black
+
+    usecase "consultar disponibilidade de veiculos" as c_d_veicle #PaleGoldenRod;line:black;line.bold;text:black
+
+    usecase "listar veiculos por marca" as l_v_marca #PaleGoldenRod;line:black;line.bold;text:black
+
+    usecase "listar veiculos por modelo" as l_v_model #PaleGoldenRod;line:black;line.bold;text:black
+
+    usecase "listar veiculos por ano" as l_v_ano #PaleGoldenRod;line:black;line.bold;text:black
+
+}
+
+client --> cadastrar_veicle
+client --> c_d_veicle
+client --> l_v_marca
+client --> l_v_model
+client --> l_v_ano
+client --> cadastrar_user
+client --> aluguel_veicle
+locadora --> aluguel_veicle
+
+cadastrar_user --> solicitar_parametros #green;line.dashed;text:green
+
+aluguel_veicle --> solicitar_parametros #green;line.dashed;text:green
+
+cadastrar_veicle --> solicitar_parametros #green;line.dashed;text:green
+
+c_d_veicle --> show_carros_disponiveis_ou_indisponiveis #green;line.dashed;text:green
+
+l_v_marca --> showListCar #green;line.dashed;text:green
+l_v_model --> showListCar #green;line.dashed;text:green
+l_v_ano --> showListCar #green;line.dashed;text:green
+
+@enduml

@@ -1,0 +1,6 @@
+@startuml listar_veiculos_por_marca
+client --> app:listar veiculos por marca
+app --> client:solicitação de marca
+client --> app:retornar marca
+app --> client:retornar uma lista dos veiculos com a marca
+@enduml
