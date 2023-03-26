@@ -1,0 +1,6 @@
+@startuml listar_veiculos_por_ano
+client --> app:listar veiculos por ano
+app --> client:solicitação de ano
+client --> app:retornar ano
+app --> client:retornar uma lista dos veiculos com o ano
+@enduml
