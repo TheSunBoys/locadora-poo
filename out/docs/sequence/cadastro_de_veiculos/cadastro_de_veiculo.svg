@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="250px" preserveAspectRatio="none" style="width:381px;height:250px;background:#FFFFFF;" version="1.1" viewBox="0 0 381 250" width="381px" zoomAndPan="magnify"><defs/><g><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="30" x2="30" y1="36.2969" y2="214.9609"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="220.5" x2="220.5" y1="36.2969" y2="214.9609"/><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="51" x="5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="12" y="24.9951">client</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="51" x="5" y="213.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="12" y="233.9561">client</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="200.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="207.5" y="24.9951">app</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="40" x="200.5" y="213.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="207.5" y="233.9561">app</text><polygon fill="#181818" points="208.5,63.4297,218.5,67.4297,208.5,71.4297,212.5,67.4297" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30.5" x2="214.5" y1="67.4297" y2="67.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="37.5" y="62.3638">cadastro de veiculo</text><polygon fill="#181818" points="41.5,92.5625,31.5,96.5625,41.5,100.5625,37.5,96.5625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="35.5" x2="219.5" y1="96.5625" y2="96.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="47.5" y="91.4966">solicitação de parâmetros</text><polygon fill="#181818" points="208.5,121.6953,218.5,125.6953,208.5,129.6953,212.5,125.6953" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30.5" x2="214.5" y1="125.6953" y2="125.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="37.5" y="120.6294">parâmetros dados</text><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="220.5" x2="262.5" y1="154.8281" y2="154.8281"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="262.5" x2="262.5" y1="154.8281" y2="167.8281"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="221.5" x2="262.5" y1="167.8281" y2="167.8281"/><polygon fill="#181818" points="231.5,163.8281,221.5,167.8281,231.5,171.8281,227.5,167.8281" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="147" x="227.5" y="149.7622">armazenamento no bd</text><polygon fill="#181818" points="41.5,192.9609,31.5,196.9609,41.5,200.9609,37.5,196.9609" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="35.5" x2="219.5" y1="196.9609" y2="196.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130" x="47.5" y="191.895">"cadastro concluido"</text><!--MD5=[973b7d63daf0b2e088d4695400d76763]
+@startuml cadastro_de_veiculo
+'cadastro de veiculo 
+client - -> app:cadastro de veiculo
+app - -> client:solicitação de parâmetros
+client - -> app:parâmetros dados
+app - -> app:armazenamento no bd
+app - -> client:"cadastro concluido"
+@enduml
+
+@startuml cadastro_de_veiculo
+client - -> app:cadastro de veiculo
+app - -> client:solicitação de parâmetros
+client - -> app:parâmetros dados
+app - -> app:armazenamento no bd
+app - -> client:"cadastro concluido"
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 14:01:30 BRT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pt
+Country: BR
+--></g></svg>
