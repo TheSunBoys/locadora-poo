@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="828px" preserveAspectRatio="none" style="width:590px;height:828px;background:#FFFFFF;" version="1.1" viewBox="0 0 590 828" width="590px" zoomAndPan="magnify"><defs/><g><g id="elem_carro"><rect fill="#F1F1F1" height="142.375" style="stroke:#181818;stroke-width:0.5;" width="177" x="403" y="242"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="474" y="256.9951">carro</text><line style="stroke:#181818;stroke-width:0.5;" x1="404" x2="579" y1="262.2969" y2="262.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="423" y="279.292">marca = "FIAT"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="423" y="295.5889">modelo = "Uno"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="423" y="311.8857">ano = "2008"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="423" y="328.1826">placa = "DANCE"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="423" y="344.4795">quilometragem = 450</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="423" y="360.7764">valorDaDiaria = 80</text><ellipse cx="414" cy="373.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="423" y="377.0732">set_estado(self) carro</text></g><g id="elem_carro2"><rect fill="#F1F1F1" height="142.375" style="stroke:#181818;stroke-width:0.5;" width="185" x="95" y="679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="165.5" y="693.9951">carro2</text><line style="stroke:#181818;stroke-width:0.5;" x1="96" x2="279" y1="699.2969" y2="699.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="115" y="716.292">marca = "FORD"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="115" y="732.5889">modelo = "4 Rodas"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="115" y="748.8857">ano = "2019"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="115" y="765.1826">placa = "GODS"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="115" y="781.4795">quilometragem = 666</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="115" y="797.7764">valorDaDiaria = 69</text><ellipse cx="106" cy="810.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="115" y="814.0732">set_estado(self) carro2</text></g><g id="elem_cliente"><rect fill="#F1F1F1" height="93.4844" style="stroke:#181818;stroke-width:0.5;" width="361" x="7" y="266.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="164.5" y="281.4951">cliente</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="367" y1="286.7969" y2="286.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="27" y="303.792">nome = "João Azul"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="27" y="320.0889">id = 123456</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="335" x="27" y="336.3857">historicoDeCarrosAlugados = [aluguel, aluguel2]</text><ellipse cx="18" cy="349.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="27" y="352.6826">atualizar_aluguel(aluguel)</text></g><g id="elem_cliente2"><rect fill="#F1F1F1" height="93.4844" style="stroke:#181818;stroke-width:0.5;" width="244" x="339.5" y="48"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="434" y="62.9951">cliente2</text><line style="stroke:#181818;stroke-width:0.5;" x1="340.5" x2="582.5" y1="68.2969" y2="68.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="359.5" y="85.292">nome = "Maria Vermelha"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="359.5" y="101.5889">id = 234567</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="359.5" y="117.8857">historicoDeCarrosAlugados = []</text><ellipse cx="350.5" cy="130.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="359.5" y="134.1826">atualizar_aluguel(aluguel)</text></g><g id="elem_aluguel"><rect fill="#F1F1F1" height="174.9688" style="stroke:#181818;stroke-width:0.5;" width="234" x="70.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="162.5" y="21.9951">aluguel</text><line style="stroke:#181818;stroke-width:0.5;" x1="71.5" x2="303.5" y1="27.2969" y2="27.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="76.5" y="44.292">user = cliente</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="76.5" y="60.5889">car = carro</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="76.5" y="76.8857">dataIni = "15/03/2023"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="76.5" y="93.1826">dataFim = "20/03/2023"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="76.5" y="109.4795">hj = "24/03/2023"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="76.5" y="125.7764">diaria = carro.valorDaDiaria</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="76.5" y="142.0732">qtDays = hj - dataFim</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="76.5" y="158.3701">taxa = qtDays * diaria * (20/100)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="76.5" y="174.667">nomeClasse = "Aluguel"</text></g><g id="elem_aluguel2"><rect fill="#F1F1F1" height="174.9688" style="stroke:#181818;stroke-width:0.5;" width="234" x="70.5" y="444"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="158" y="458.9951">aluguel2</text><line style="stroke:#181818;stroke-width:0.5;" x1="71.5" x2="303.5" y1="464.2969" y2="464.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="76.5" y="481.292">user = cliente</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="76.5" y="497.5889">car = carro2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="76.5" y="513.8857">dataIni = "01/01/2023"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="76.5" y="530.1826">dataFim = "20/01/2023"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="76.5" y="546.4795">hj = "24/03/2023"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="76.5" y="562.7764">diaria = carro.valorDaDiaria</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="76.5" y="579.0732">qtDays = hj - dataFim</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="76.5" y="595.3701">taxa = qtDays * diaria * (20/100)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="76.5" y="611.667">nomeClasse = "Aluguel"</text></g><!--MD5=[eb79adbb2a4210928465ea61c0bdec0e]
+reverse link aluguel to carro--><g id="link_aluguel_carro"><path codeLine="56" d="M315.37,186.57 C344.8,207.52 375.45,229.36 402.79,248.82 " fill="none" id="aluguel-backto-carro" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="304.6,178.89,307.1652,185.6294,314.3728,185.8536,311.8076,179.1142,304.6,178.89" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="312.358" y="180.8879">1</text></g><!--MD5=[31b828285c2087ff1f87c9cc7a14e6e0]
+reverse link aluguel to cliente--><g id="link_aluguel_cliente"><path codeLine="57" d="M174.78,195.6 C174.59,220.41 175.29,245.79 176.89,266.49 " fill="none" id="aluguel-backto-cliente" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="174.97,182.31,170.8782,188.2478,174.7854,194.3086,178.8772,188.3708,174.97,182.31" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="165.6528" y="201.9784">1</text></g><!--MD5=[9149e2e7e1999e8007f0c85fb6e7f6d3]
+reverse link cliente to aluguel--><g id="link_cliente_aluguel"><path codeLine="60" d="M199.65,253.37 C200.93,231.5 201.3,206.18 200.76,182.31 " fill="none" id="cliente-backto-aluguel" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="198.74,266.49,203.1457,260.7813,199.5706,254.5188,195.1649,260.2275,198.74,266.49" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="191.8034" y="255.5984">1</text></g><!--MD5=[1eb22ebb4f40324861dffc6c2566dccb]
+reverse link aluguel2 to carro2--><g id="link_aluguel2_carro2"><path codeLine="58" d="M187.5,632.39 C187.5,648.07 187.5,663.98 187.5,678.8 " fill="none" id="aluguel2-backto-carro2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="187.5,619.31,183.5,625.31,187.5,631.31,191.5,625.31,187.5,619.31" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="179.1813" y="638.9784">1</text></g><!--MD5=[2ee51e57b879f5c1740c681c94181c06]
+reverse link aluguel2 to cliente--><g id="link_aluguel2_cliente"><path codeLine="59" d="M200.96,430.54 C201.18,405.74 200.44,380.37 198.75,359.65 " fill="none" id="aluguel2-backto-cliente" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="200.76,443.82,204.8518,437.8822,200.9446,431.8214,196.8528,437.7592,200.76,443.82" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="193.5268" y="433.0116">1</text></g><!--MD5=[74767f0a6d4c08576c05ba98bf7a08bc]
+reverse link cliente to aluguel2--><g id="link_cliente_aluguel2"><path codeLine="61" d="M176.02,372.78 C174.81,394.66 174.47,419.97 174.98,443.82 " fill="none" id="cliente-backto-aluguel2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="176.87,359.65,172.4831,365.3732,176.0788,371.6239,180.4657,365.9007,176.87,359.65" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="166.6298" y="379.9817">1</text></g><!--MD5=[97301bf0f2595773aedb465b78562b0a]
+@startuml diagrama_de_objetos
+
+object carro
+carro : marca = "FIAT"
+carro : modelo = "Uno"
+carro : ano = "2008"
+carro : placa = "DANCE"
+carro : quilometragem = 450
+carro : valorDaDiaria = 80
+
+carro : + set_estado(self) carro
+
+object carro2
+carro2 : marca = "FORD"
+carro2 : modelo = "4 Rodas"
+carro2 : ano = "2019"
+carro2 : placa = "GODS"
+carro2 : quilometragem = 666
+carro2 : valorDaDiaria = 69
+
+carro2 : + set_estado(self) carro2
+
+object cliente
+cliente : nome = "João Azul"
+cliente : id = 123456
+cliente : historicoDeCarrosAlugados = [aluguel, aluguel2]
+cliente : + atualizar_aluguel(aluguel)
+
+object cliente2
+cliente2 : nome = "Maria Vermelha"
+cliente2 : id = 234567
+cliente2 : historicoDeCarrosAlugados = []
+cliente2 : + atualizar_aluguel(aluguel)
+
+object aluguel
+aluguel : user = cliente
+aluguel : car = carro
+aluguel : dataIni = "15/03/2023"
+aluguel : dataFim = "20/03/2023"
+aluguel : hj = "24/03/2023"
+aluguel : diaria = carro.valorDaDiaria
+aluguel : qtDays = hj - dataFim
+aluguel : taxa = qtDays * diaria * (20/100)
+aluguel : nomeClasse = "Aluguel"
+
+object aluguel2
+aluguel2 : user = cliente
+aluguel2 : car = carro2
+aluguel2 : dataIni = "01/01/2023"
+aluguel2 : dataFim = "20/01/2023"
+aluguel2 : hj = "24/03/2023"
+aluguel2 : diaria = carro.valorDaDiaria
+aluguel2 : qtDays = hj - dataFim
+aluguel2 : taxa = qtDays * diaria * (20/100)
+aluguel2 : nomeClasse = "Aluguel"
+
+aluguel "1" *- - carro
+aluguel "1" *- - cliente
+aluguel2 "1" *- - carro2
+aluguel2 "1" *- - cliente
+cliente "1" o- - aluguel
+cliente "1" o- - aluguel2
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 14:01:30 BRT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pt
+Country: BR
+--></g></svg>
