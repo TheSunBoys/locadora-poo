@@ -50,20 +50,30 @@ class App():
         mostrarVeiculos(resp)
 
     def listar_veiculos_por_marca(self, carList): #Thiago
-        if len(carList) > 0:
-            for i, car in enumerate(carList):
-                print(f"Marca do carro ({i+1}): {car.marca}")
-            print(f"Total de veículos é: {len(carList)}")
-        else:
-            print('Nenhum veículo encontrado!')
+        marca = input('\nMarca que quer procurar: ')
+        carros_por_marca = []
+        for car in carList:
+            if car.marca == marca:
+                carros_por_marca.append(car)
+        if len(carros_por_marca) > 0:
+            print(f'Veículos {marca}: ')
+            for i, car in enumerate(carros_por_marca):
+                print(f"{i} - {car}")
+        else: 
+            print(f'Não há veículos {marca}.')
 
     def listar_veiculos_por_modelo(self, carList): #thiago
-        if len(carList) > 0:
-            for i, car in enumerate(carList):
-                print(f"Modelo do carro ({i+1}): {car.modelo}")
-            print(f"Total de veículos é: {len(carList)}")
-        else:
-            print('Nenhum veículo encontrado!')
+        modelo = input('\nModelo que quer procurar: ')
+        carros_por_modelo = []
+        for car in carList:
+            if car.modelo == modelo:
+                carros_por_modelo.append(car)
+        if len(carros_por_modelo) > 0:
+            print(f'Veículos {modelo}: ')
+            for i, car in enumerate(carros_por_modelo):
+                print(f"{i} - {car}")
+        else: 
+            print(f'Não há veículos {modelo}.')
 
     def listar_veiculos_por_ano(self, carList):
         ano = input("Ano: ")
@@ -114,6 +124,27 @@ class App():
         util.pauseAndClear()
         print(aluguel)
         return aluguel
+
+    def devolver_veiculo(self, userList):
+        for i, user in enumerate(userList):
+            print(f'\nusuario {i}: {user}\n')
+
+        resp = int(input('Digite o número do seu usuario: '))
+        user = userList[resp]
+        print(f'\nuser: {user}\n')
+
+        if user.historicoDeCarrosAlugados != []:
+            print('alugueis do cliente: ')
+            for i, aluguel in enumerate(user.historicoDeCarrosAlugados):
+                print(f'\naluguel {i}: {aluguel}\n')
+            
+            resp = int(input('Digite o número do seu aluguel: '))
+            aluguel = user.historicoDeCarrosAlugados[resp]
+            print(aluguel)
+            print(f'carro devolvido e disponivel!')
+            return aluguel
+        else:
+            print(f'o cliente {user.nome} não tem carros alugados.')
 
     class Veiculo():
         def __init__(self, marca, modelo, ano):
@@ -172,6 +203,9 @@ class App():
         def atualizar_aluguel(self, aluguel):
             self.historicoDeCarrosAlugados.append(aluguel)
 
+        def remover_aluguel(self, aluguel):
+            self.historicoDeCarrosAlugados.remove(aluguel)
+
     class Aluguel:
         def __init__(self, user, car, dataIni, dataFim):
             self.user = user
@@ -185,28 +219,48 @@ class App():
             self.daysRestantes = abs((self.dataFim - self.hj).days)
             self.taxa = self.qtDays * (self.diaria * 20)/100
             self.nomeClasse = self.__class__.__name__
-        
+            if self.dataFim < self.hj:
+                self.diariaAdicional = self.diaria * self.qtDays
+                pass
+            elif self.dataFim > self.hj:
+                self.diariaAdicional = 0
+                pass
+            else:
+                self.diariaAdicional = 0
+                pass
+
         def __str__(self):
             if self.dataFim < self.hj:
-                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$,\ncom taxa de {self.taxa} R$ por não entregar o carro por {self.qtDays}'
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$,\ncom taxa de {self.taxa} R$ e diaria adicional de {self.diariaAdicional} R$ por não entregar o carro por {self.qtDays} dia(s)'
 
             elif self.dataFim > self.hj:
                 return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ndias restantes para a entrega: {self.daysRestantes}'
 
             else:
                 hj = self.hj.strftime('%d/%m/%Y')
-                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ncom data de entrega para hoje {hj}'
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ncom data de entrega para hoje: {hj}'
                 
-    def loadLists(self):
-        c1 = self.Carro('HONDA', 'Calhambeque', '2007', 'DEVIL', 0, 666)
-        c2 = self.Carro('SHINERAI', 'Fusca', '1986', '_ACDC_', 666, 69).set_estado()
-        c3 = self.Carro('FIAT', 'Uno', '2008', 'DANCE', 450, 80)
-        c4 = self.Carro('FORD', '4 Rodas', '2019', 'GODS', 666, 69)
+        def __repr__(self):
+            if self.dataFim < self.hj:
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$,\ncom taxa de {self.taxa} R$ e diaria adicional de {self.diariaAdicional} R$ por não entregar o carro por {self.qtDays} dia(s)'
 
-        u1 = self.Cliente('Joaquim Tafarel de Fênix')
-        u2 = self.Cliente('Carlos Xavier de Pegáso')
-        u3 = self.Cliente('James Fiesta de Libra')
-        u4 = self.Cliente('Shooter Booter de Câncer')
+            elif self.dataFim > self.hj:
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ndias restantes para a entrega: {self.daysRestantes}'
+
+            else:
+                hj = self.hj.strftime('%d/%m/%Y')
+                return f'{self.nomeClasse} de {self.user.nome}:\n{self.car}. diaria: {self.diaria} R$\ncom data de entrega para hoje: {hj}'
+
+    def loadLists(self):
+        c1 = self.Carro('HONDA', 'CALHAMBEQUE', '2007', 'DEVIL', 0, 666)
+        c2 = self.Carro('SHINERAI', 'FUSCA', '1986', '_ACDC_', 666, 69).set_estado()
+        c3 = self.Carro('FIAT', 'UNO', '2008', 'DANCE', 450, 80)
+        c4 = self.Carro('FORD', '4 RODAS', '2019', 'GODS', 666, 69)
+
+        u1 = self.Cliente('Joaquim Tafarel')
+        u2 = self.Cliente('Carlos Xavier')
+        u3 = self.Cliente('James Fiesta')
+        u4 = self.Cliente('Shooter Booter')
 
         userList = [u1, u2, u3, u4]
         
