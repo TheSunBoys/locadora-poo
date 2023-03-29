@@ -50,20 +50,30 @@ class App():
         mostrarVeiculos(resp)
 
     def listar_veiculos_por_marca(self, carList): #Thiago
-        if len(carList) > 0:
-            for i, car in enumerate(carList):
-                print(f"Marca do carro ({i+1}): {car.marca}")
-            print(f"Total de veículos é: {len(carList)}")
-        else:
-            print('Nenhum veículo encontrado!')
+        marca = input('\nMarca que quer procurar: ')
+        carros_por_marca = []
+        for car in carList:
+            if car.marca == marca:
+                carros_por_marca.append(car)
+        if len(carros_por_marca) > 0:
+            print(f'Veículos {marca}: ')
+            for i, car in enumerate(carros_por_marca):
+                print(f"{i} - {car}")
+        else: 
+            print(f'Não há veículos {marca}.')
 
     def listar_veiculos_por_modelo(self, carList): #thiago
-        if len(carList) > 0:
-            for i, car in enumerate(carList):
-                print(f"Modelo do carro ({i+1}): {car.modelo}")
-            print(f"Total de veículos é: {len(carList)}")
-        else:
-            print('Nenhum veículo encontrado!')
+        modelo = input('\nModelo que quer procurar: ')
+        carros_por_modelo = []
+        for car in carList:
+            if car.modelo == modelo:
+                carros_por_modelo.append(car)
+        if len(carros_por_modelo) > 0:
+            print(f'Veículos {modelo}: ')
+            for i, car in enumerate(carros_por_modelo):
+                print(f"{i} - {car}")
+        else: 
+            print(f'Não há veículos {modelo}.')
 
     def listar_veiculos_por_ano(self, carList):
         ano = input("Ano: ")
